@@ -45,8 +45,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
-import tinycc.presentation.TinyccEditorPlugin;
-
 
 /**
  * Customized {@link WorkbenchAdvisor} for the RCP application.

@@ -370,6 +370,16 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getModel_Name() {
+		return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getFlowDirection() {
 		return flowDirectionEEnum;
 	}
@@ -431,6 +441,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__COMPONENTS);
 		createEReference(modelEClass, MODEL__CONNECTORS);
+		createEAttribute(modelEClass, MODEL__NAME);
 
 		// Create enums
 		flowDirectionEEnum = createEEnum(FLOW_DIRECTION);
@@ -499,6 +510,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_Components(), this.getComponent(), null, "components", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(flowDirectionEEnum, FlowDirection.class, "FlowDirection");

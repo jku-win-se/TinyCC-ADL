@@ -39,6 +39,7 @@
     <genClasses ecoreClass="tinycc.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Model/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Model/connectors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Model/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

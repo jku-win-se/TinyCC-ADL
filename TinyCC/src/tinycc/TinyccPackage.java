@@ -416,13 +416,22 @@ public interface TinyccPackage extends EPackage {
 	int MODEL__CONNECTORS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 2;
+	int MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -680,6 +689,17 @@ public interface TinyccPackage extends EPackage {
 	EReference getModel_Connectors();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tinycc.Model#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tinycc.Model#getName()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EAttribute getModel_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link tinycc.FlowDirection <em>Flow Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -901,6 +921,14 @@ public interface TinyccPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL__CONNECTORS = eINSTANCE.getModel_Connectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL__NAME = eINSTANCE.getModel_Name();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.FlowDirection <em>Flow Direction</em>}' enum.

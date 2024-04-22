@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tinycc.Model#getComponents <em>Components</em>}</li>
  *   <li>{@link tinycc.Model#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link tinycc.Model#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see tinycc.TinyccPackage#getModel()
@@ -47,5 +48,27 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<Connector> getConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see tinycc.TinyccPackage#getModel_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link tinycc.Model#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Model

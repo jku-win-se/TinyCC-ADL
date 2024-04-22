@@ -4,7 +4,7 @@
     <semanticResources>tinycc.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Igux4PzGEe6Jyc70njII3w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_LVeKYPzGEe6Jyc70njII3w" name="tinycc class diagram" repPath="#_LVbHEPzGEe6Jyc70njII3w" changeId="1713777285397">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_LVeKYPzGEe6Jyc70njII3w" name="tinycc class diagram" repPath="#_LVbHEPzGEe6Jyc70njII3w" changeId="1713780794757">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="tinycc.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -107,6 +107,10 @@
         <children xmi:type="notation:Node" xmi:id="_LzTV6_zGEe6Jyc70njII3w" type="2003" element="_LzI90_zGEe6Jyc70njII3w">
           <children xmi:type="notation:Node" xmi:id="_LzTV7vzGEe6Jyc70njII3w" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_LzT88PzGEe6Jyc70njII3w" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_5pRkMACQEe-GvMAWr4QU5Q" type="3010" element="_5pHMIACQEe-GvMAWr4QU5Q">
+              <styles xmi:type="notation:FontStyle" xmi:id="_5pRkMQCQEe-GvMAWr4QU5Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_5pRkMgCQEe-GvMAWr4QU5Q"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_LzT88fzGEe6Jyc70njII3w"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_LzT88vzGEe6Jyc70njII3w"/>
           </children>
@@ -528,10 +532,18 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_LzI91PzGEe6Jyc70njII3w" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7nFUvQCQEe-GvMAWr4QU5Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_5pHMIACQEe-GvMAWr4QU5Q" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="tinycc.ecore#//Model/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="tinycc.ecore#//Model/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_7nF7xQCQEe-GvMAWr4QU5Q" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_LzNPQPzGEe6Jyc70njII3w" name="[0..*] properties" sourceNode="_LzF6gPzGEe6Jyc70njII3w" targetNode="_LzHIovzGEe6Jyc70njII3w">
       <target xmi:type="ecore:EReference" href="tinycc.ecore#//Component/properties"/>
