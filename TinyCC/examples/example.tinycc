@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tinycc:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:tinycc="www.jku.at/tinycc">
+  <components name="A">
+    <ports name="A:a" direction="OUT"/>
+    <components name="A1"/>
+  </components>
+  <components name="B">
+    <ports name="B:b"/>
+    <components name="B1"/>
+  </components>
+  <connectors name="ab" oppositeConnector="//@connectors.1">
+    <ends name="a" port="//@components.0/@ports.0"/>
+    <ends name="b" port="//@components.1/@ports.0"/>
+  </connectors>
+  <connectors name="ba" oppositeConnector="//@connectors.0">
+    <ends name="b" port="//@components.1/@ports.0"/>
+    <ends name="a" port="//@components.0/@ports.0"/>
+  </connectors>
+</tinycc:Model>

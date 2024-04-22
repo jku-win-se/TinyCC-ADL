@@ -3,15 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: TinyCC;singleton:=true
 Automatic-Module-Name: TinyCC
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: sysml,
- sysml.impl,
- sysml.util,
- tinycc,
+Export-Package: tinycc,
  tinycc.impl,
  tinycc.util
 Require-Bundle: org.eclipse.core.runtime,
