@@ -20,8 +20,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Entity/name"/>
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/types"/>
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Port">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Port/direction"/>
@@ -40,6 +40,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Model/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Model/connectors"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Model/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tinycc.ecore#//Item">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinycc.ecore#//Item/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Item/properties"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

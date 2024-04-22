@@ -210,6 +210,29 @@ public class TinyccItemProviderAdapterFactory extends TinyccAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link tinycc.Item} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ItemItemProvider itemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tinycc.Item}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createItemAdapter() {
+		if (itemItemProvider == null) {
+			itemItemProvider = new ItemItemProvider(this);
+		}
+
+		return itemItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,6 +343,7 @@ public class TinyccItemProviderAdapterFactory extends TinyccAdapterFactory imple
 		if (connectorEndItemProvider != null) connectorEndItemProvider.dispose();
 		if (connectorItemProvider != null) connectorItemProvider.dispose();
 		if (modelItemProvider != null) modelItemProvider.dispose();
+		if (itemItemProvider != null) itemItemProvider.dispose();
 	}
 
 }

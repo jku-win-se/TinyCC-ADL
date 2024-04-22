@@ -9,28 +9,30 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import tinycc.Property;
+import tinycc.Item;
+import tinycc.TinyccFactory;
 import tinycc.TinyccPackage;
 
 /**
- * This is the item provider adapter for a {@link tinycc.Property} object.
+ * This is the item provider adapter for a {@link tinycc.Item} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyItemProvider extends EntityItemProvider {
+public class ItemItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyItemProvider(AdapterFactory adapterFactory) {
+	public ItemItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,65 +47,72 @@ public class PropertyItemProvider extends EntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuesPropertyDescriptor(object);
-			addTypesPropertyDescriptor(object);
+			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Values feature.
+	 * This adds a property descriptor for the Connectors feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuesPropertyDescriptor(Object object) {
+	protected void addConnectorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_values_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__VALUES,
+				 getString("_UI_Item_connectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Item_connectors_feature", "_UI_Item_type"),
+				 TinyccPackage.Literals.ITEM__CONNECTORS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Types feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_types_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_types_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__TYPES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(TinyccPackage.Literals.ITEM__PROPERTIES);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns Property.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns Item.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Property"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Item"));
 	}
 
 	/**
@@ -114,10 +123,10 @@ public class PropertyItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Property)object).getName();
+		String label = ((Item)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Property_type") :
-			getString("_UI_Property_type") + " " + label;
+			getString("_UI_Item_type") :
+			getString("_UI_Item_type") + " " + label;
 	}
 
 
@@ -132,10 +141,9 @@ public class PropertyItemProvider extends EntityItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Property.class)) {
-			case TinyccPackage.PROPERTY__VALUES:
-			case TinyccPackage.PROPERTY__TYPES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(Item.class)) {
+			case TinyccPackage.ITEM__PROPERTIES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -151,6 +159,11 @@ public class PropertyItemProvider extends EntityItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TinyccPackage.Literals.ITEM__PROPERTIES,
+				 TinyccFactory.eINSTANCE.createProperty()));
 	}
 
 }

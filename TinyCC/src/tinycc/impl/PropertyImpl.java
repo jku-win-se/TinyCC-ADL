@@ -2,11 +2,13 @@
  */
 package tinycc.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import tinycc.Property;
 import tinycc.TinyccPackage;
@@ -19,52 +21,32 @@ import tinycc.TinyccPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tinycc.impl.PropertyImpl#getValue <em>Value</em>}</li>
- *   <li>{@link tinycc.impl.PropertyImpl#getType <em>Type</em>}</li>
+ *   <li>{@link tinycc.impl.PropertyImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link tinycc.impl.PropertyImpl#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PropertyImpl extends EntityImpl implements Property {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getValues()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
+	protected EList<String> values;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
+	protected EList<String> types;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,8 +73,11 @@ public class PropertyImpl extends EntityImpl implements Property {
 	 * @generated
 	 */
 	@Override
-	public String getValue() {
-		return value;
+	public EList<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeUniqueEList<String>(String.class, this, TinyccPackage.PROPERTY__VALUES);
+		}
+		return values;
 	}
 
 	/**
@@ -101,34 +86,11 @@ public class PropertyImpl extends EntityImpl implements Property {
 	 * @generated
 	 */
 	@Override
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TinyccPackage.PROPERTY__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TinyccPackage.PROPERTY__TYPE, oldType, type));
+	public EList<String> getTypes() {
+		if (types == null) {
+			types = new EDataTypeUniqueEList<String>(String.class, this, TinyccPackage.PROPERTY__TYPES);
+		}
+		return types;
 	}
 
 	/**
@@ -139,10 +101,10 @@ public class PropertyImpl extends EntityImpl implements Property {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TinyccPackage.PROPERTY__VALUE:
-				return getValue();
-			case TinyccPackage.PROPERTY__TYPE:
-				return getType();
+			case TinyccPackage.PROPERTY__VALUES:
+				return getValues();
+			case TinyccPackage.PROPERTY__TYPES:
+				return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,14 +114,17 @@ public class PropertyImpl extends EntityImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TinyccPackage.PROPERTY__VALUE:
-				setValue((String)newValue);
+			case TinyccPackage.PROPERTY__VALUES:
+				getValues().clear();
+				getValues().addAll((Collection<? extends String>)newValue);
 				return;
-			case TinyccPackage.PROPERTY__TYPE:
-				setType((String)newValue);
+			case TinyccPackage.PROPERTY__TYPES:
+				getTypes().clear();
+				getTypes().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,11 +138,11 @@ public class PropertyImpl extends EntityImpl implements Property {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TinyccPackage.PROPERTY__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case TinyccPackage.PROPERTY__VALUES:
+				getValues().clear();
 				return;
-			case TinyccPackage.PROPERTY__TYPE:
-				setType(TYPE_EDEFAULT);
+			case TinyccPackage.PROPERTY__TYPES:
+				getTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -191,10 +156,10 @@ public class PropertyImpl extends EntityImpl implements Property {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TinyccPackage.PROPERTY__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case TinyccPackage.PROPERTY__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case TinyccPackage.PROPERTY__VALUES:
+				return values != null && !values.isEmpty();
+			case TinyccPackage.PROPERTY__TYPES:
+				return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,10 +174,10 @@ public class PropertyImpl extends EntityImpl implements Property {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", type: ");
-		result.append(type);
+		result.append(" (values: ");
+		result.append(values);
+		result.append(", types: ");
+		result.append(types);
 		result.append(')');
 		return result.toString();
 	}

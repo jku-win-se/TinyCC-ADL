@@ -96,6 +96,10 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 				return createModelAdapter();
 			}
 			@Override
+			public Adapter caseItem(Item object) {
+				return createItemAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +214,20 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tinycc.Item <em>Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tinycc.Item
+	 * @generated
+	 */
+	public Adapter createItemAdapter() {
 		return null;
 	}
 

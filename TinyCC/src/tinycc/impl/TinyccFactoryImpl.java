@@ -63,6 +63,7 @@ public class TinyccFactoryImpl extends EFactoryImpl implements TinyccFactory {
 			case TinyccPackage.CONNECTOR_END: return createConnectorEnd();
 			case TinyccPackage.CONNECTOR: return createConnector();
 			case TinyccPackage.MODEL: return createModel();
+			case TinyccPackage.ITEM: return createItem();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -162,6 +163,17 @@ public class TinyccFactoryImpl extends EFactoryImpl implements TinyccFactory {
 	public Model createModel() {
 		ModelImpl model = new ModelImpl();
 		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Item createItem() {
+		ItemImpl item = new ItemImpl();
+		return item;
 	}
 
 	/**

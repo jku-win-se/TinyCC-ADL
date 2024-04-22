@@ -15,6 +15,7 @@ import tinycc.Connector;
 import tinycc.ConnectorEnd;
 import tinycc.Entity;
 import tinycc.FlowDirection;
+import tinycc.Item;
 import tinycc.Model;
 import tinycc.Port;
 import tinycc.Property;
@@ -76,6 +77,13 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	private EClass modelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass itemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +228,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Value() {
+	public EAttribute getProperty_Values() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -230,7 +238,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Type() {
+	public EAttribute getProperty_Types() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -380,6 +388,36 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getItem() {
+		return itemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getItem_Connectors() {
+		return (EReference)itemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getItem_Properties() {
+		return (EReference)itemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getFlowDirection() {
 		return flowDirectionEEnum;
 	}
@@ -422,8 +460,8 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		createEAttribute(entityEClass, ENTITY__NAME);
 
 		propertyEClass = createEClass(PROPERTY);
-		createEAttribute(propertyEClass, PROPERTY__VALUE);
-		createEAttribute(propertyEClass, PROPERTY__TYPE);
+		createEAttribute(propertyEClass, PROPERTY__VALUES);
+		createEAttribute(propertyEClass, PROPERTY__TYPES);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__DIRECTION);
@@ -442,6 +480,10 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		createEReference(modelEClass, MODEL__COMPONENTS);
 		createEReference(modelEClass, MODEL__CONNECTORS);
 		createEAttribute(modelEClass, MODEL__NAME);
+
+		itemEClass = createEClass(ITEM);
+		createEReference(itemEClass, ITEM__CONNECTORS);
+		createEReference(itemEClass, ITEM__PROPERTIES);
 
 		// Create enums
 		flowDirectionEEnum = createEEnum(FLOW_DIRECTION);
@@ -480,6 +522,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		portEClass.getESuperTypes().add(this.getEntity());
 		connectorEndEClass.getESuperTypes().add(this.getEntity());
 		connectorEClass.getESuperTypes().add(this.getEntity());
+		itemEClass.getESuperTypes().add(this.getEntity());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -491,8 +534,8 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperty_Type(), ecorePackage.getEString(), "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Values(), ecorePackage.getEString(), "values", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Types(), ecorePackage.getEString(), "types", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Direction(), this.getFlowDirection(), "direction", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -511,6 +554,10 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		initEReference(getModel_Components(), this.getComponent(), null, "components", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getItem_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItem_Properties(), this.getProperty(), null, "properties", null, 0, -1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(flowDirectionEEnum, FlowDirection.class, "FlowDirection");

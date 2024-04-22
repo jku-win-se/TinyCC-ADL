@@ -178,22 +178,22 @@ public interface TinyccPackage extends EPackage {
 	int PROPERTY__NAME = ENTITY__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__VALUE = ENTITY_FEATURE_COUNT + 0;
+	int PROPERTY__VALUES = ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Types</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TYPE = ENTITY_FEATURE_COUNT + 1;
+	int PROPERTY__TYPES = ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -443,6 +443,61 @@ public interface TinyccPackage extends EPackage {
 	int MODEL_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link tinycc.impl.ItemImpl <em>Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tinycc.impl.ItemImpl
+	 * @see tinycc.impl.TinyccPackageImpl#getItem()
+	 * @generated
+	 */
+	int ITEM = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM__NAME = ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM__CONNECTORS = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM__PROPERTIES = ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link tinycc.FlowDirection <em>Flow Direction</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,7 +505,7 @@ public interface TinyccPackage extends EPackage {
 	 * @see tinycc.impl.TinyccPackageImpl#getFlowDirection()
 	 * @generated
 	 */
-	int FLOW_DIRECTION = 7;
+	int FLOW_DIRECTION = 8;
 
 
 	/**
@@ -528,26 +583,26 @@ public interface TinyccPackage extends EPackage {
 	EClass getProperty();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tinycc.Property#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute list '{@link tinycc.Property#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see tinycc.Property#getValue()
+	 * @return the meta object for the attribute list '<em>Values</em>'.
+	 * @see tinycc.Property#getValues()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getProperty_Value();
+	EAttribute getProperty_Values();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tinycc.Property#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute list '{@link tinycc.Property#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see tinycc.Property#getType()
+	 * @return the meta object for the attribute list '<em>Types</em>'.
+	 * @see tinycc.Property#getTypes()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getProperty_Type();
+	EAttribute getProperty_Types();
 
 	/**
 	 * Returns the meta object for class '{@link tinycc.Port <em>Port</em>}'.
@@ -700,6 +755,38 @@ public interface TinyccPackage extends EPackage {
 	EAttribute getModel_Name();
 
 	/**
+	 * Returns the meta object for class '{@link tinycc.Item <em>Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Item</em>'.
+	 * @see tinycc.Item
+	 * @generated
+	 */
+	EClass getItem();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tinycc.Item#getConnectors <em>Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Connectors</em>'.
+	 * @see tinycc.Item#getConnectors()
+	 * @see #getItem()
+	 * @generated
+	 */
+	EReference getItem_Connectors();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link tinycc.Item#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
+	 * @see tinycc.Item#getProperties()
+	 * @see #getItem()
+	 * @generated
+	 */
+	EReference getItem_Properties();
+
+	/**
 	 * Returns the meta object for enum '{@link tinycc.FlowDirection <em>Flow Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -795,20 +882,20 @@ public interface TinyccPackage extends EPackage {
 		EClass PROPERTY = eINSTANCE.getProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
+		EAttribute PROPERTY__VALUES = eINSTANCE.getProperty_Values();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Types</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY__TYPE = eINSTANCE.getProperty_Type();
+		EAttribute PROPERTY__TYPES = eINSTANCE.getProperty_Types();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.impl.PortImpl <em>Port</em>}' class.
@@ -929,6 +1016,32 @@ public interface TinyccPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL__NAME = eINSTANCE.getModel_Name();
+
+		/**
+		 * The meta object literal for the '{@link tinycc.impl.ItemImpl <em>Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tinycc.impl.ItemImpl
+		 * @see tinycc.impl.TinyccPackageImpl#getItem()
+		 * @generated
+		 */
+		EClass ITEM = eINSTANCE.getItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Connectors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ITEM__CONNECTORS = eINSTANCE.getItem_Connectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ITEM__PROPERTIES = eINSTANCE.getItem_Properties();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.FlowDirection <em>Flow Direction</em>}' enum.
