@@ -33,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Connector">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Connector/ends"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Connector/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinycc.ecore#//Connector/properties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinycc.ecore#//Connector/oppositeConnector"/>
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Model">

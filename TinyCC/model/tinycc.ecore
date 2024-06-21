@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tinycc" nsURI="www.jku.at/tinycc" nsPrefix="tinycc">
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
@@ -9,29 +9,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
         eType="#//Component" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Simlement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//FlowDirection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectorEnd" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorEnd" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ends" upperBound="-1" eType="#//ConnectorEnd"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oppositeConnector" eType="#//Connector"/>
   </eClassifiers>
@@ -47,10 +45,13 @@
         eType="#//Connector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Simlement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
         eType="#//Connector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
