@@ -6,3 +6,8 @@ In TinyCC, architectural models can be combined with simulation models, such as 
 The complete metamodel is shown in the figure below.
 
 ![image](https://github.com/jku-win-se/TinyCC-ADL/assets/925612/ebe8e427-74ba-4c14-af38-19aa5589345f)
+
+## License
+
+Eclipse Public License - v 2.0
+
