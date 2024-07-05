@@ -5,7 +5,7 @@ TinyCC is a simple architectural description language (ADL) for system engineers
 In TinyCC, architectural models can be combined with simulation models, such as functional mock-up units (FMUs). To facilitate this combination, an abstract metaclass called SimElement is introduced. It provides a file-based mapping mechanism for components and connectors through the simModelPath property.
 The complete metamodel is shown in the figure below.
 
-![image](https://github.com/jku-win-se/TinyCC-ADL/assets/925612/ebe8e427-74ba-4c14-af38-19aa5589345f)
+![image](https://github.com/jku-win-se/TinyCC-ADL/assets/925612/b7667a05-5093-4c8c-95ac-480f6b1ad6e9)
 
 ## License
 
