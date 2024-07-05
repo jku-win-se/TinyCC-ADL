@@ -36,7 +36,7 @@ import tinycc.TinyccPackage;
  *
  * @generated
  */
-public class ConnectorEndImpl extends EntityImpl implements ConnectorEnd {
+public class ConnectorEndImpl extends SimlementImpl implements ConnectorEnd {
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

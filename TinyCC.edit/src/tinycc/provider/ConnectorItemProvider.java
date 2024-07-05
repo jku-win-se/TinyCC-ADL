@@ -25,7 +25,7 @@ import tinycc.TinyccPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorItemProvider extends EntityItemProvider {
+public class ConnectorItemProvider extends SimlementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public class ConnectorItemProvider extends EntityItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TinyccPackage.Literals.CONNECTOR__ENDS);
-			childrenFeatures.add(TinyccPackage.Literals.CONNECTOR__PROPERTY);
+			childrenFeatures.add(TinyccPackage.Literals.CONNECTOR__PROPERTIES);
 		}
 		return childrenFeatures;
 	}
@@ -144,7 +144,7 @@ public class ConnectorItemProvider extends EntityItemProvider {
 
 		switch (notification.getFeatureID(Connector.class)) {
 			case TinyccPackage.CONNECTOR__ENDS:
-			case TinyccPackage.CONNECTOR__PROPERTY:
+			case TinyccPackage.CONNECTOR__PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -169,7 +169,7 @@ public class ConnectorItemProvider extends EntityItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TinyccPackage.Literals.CONNECTOR__PROPERTY,
+				(TinyccPackage.Literals.CONNECTOR__PROPERTIES,
 				 TinyccFactory.eINSTANCE.createProperty()));
 	}
 

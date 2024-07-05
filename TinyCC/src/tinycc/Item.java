@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Item extends Entity {
+public interface Item extends Simlement {
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' reference list.
 	 * The list contents are of type {@link tinycc.Connector}.

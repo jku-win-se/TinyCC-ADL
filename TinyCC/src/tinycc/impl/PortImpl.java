@@ -36,7 +36,7 @@ import tinycc.TinyccPackage;
  *
  * @generated
  */
-public class PortImpl extends EntityImpl implements Port {
+public class PortImpl extends SimlementImpl implements Port {
 	/**
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->

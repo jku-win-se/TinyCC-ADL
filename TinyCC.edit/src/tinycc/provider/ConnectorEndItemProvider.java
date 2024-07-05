@@ -25,7 +25,7 @@ import tinycc.TinyccPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorEndItemProvider extends EntityItemProvider {
+public class ConnectorEndItemProvider extends SimlementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ import tinycc.TinyccPackage;
  *
  * @generated
  */
-public class PropertyImpl extends EntityImpl implements Property {
+public class PropertyImpl extends ElementImpl implements Property {
 	/**
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->

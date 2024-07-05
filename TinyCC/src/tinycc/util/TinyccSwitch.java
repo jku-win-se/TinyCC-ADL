@@ -69,41 +69,46 @@ public class TinyccSwitch<T> extends Switch<T> {
 			case TinyccPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
-				if (result == null) result = caseEntity(component);
+				if (result == null) result = caseSimlement(component);
+				if (result == null) result = caseElement(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TinyccPackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
-				T result = caseEntity(entity);
+			case TinyccPackage.SIMLEMENT: {
+				Simlement simlement = (Simlement)theEObject;
+				T result = caseSimlement(simlement);
+				if (result == null) result = caseElement(simlement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TinyccPackage.PROPERTY: {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
-				if (result == null) result = caseEntity(property);
+				if (result == null) result = caseElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TinyccPackage.PORT: {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
-				if (result == null) result = caseEntity(port);
+				if (result == null) result = caseSimlement(port);
+				if (result == null) result = caseElement(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TinyccPackage.CONNECTOR_END: {
 				ConnectorEnd connectorEnd = (ConnectorEnd)theEObject;
 				T result = caseConnectorEnd(connectorEnd);
-				if (result == null) result = caseEntity(connectorEnd);
+				if (result == null) result = caseSimlement(connectorEnd);
+				if (result == null) result = caseElement(connectorEnd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TinyccPackage.CONNECTOR: {
 				Connector connector = (Connector)theEObject;
 				T result = caseConnector(connector);
-				if (result == null) result = caseEntity(connector);
+				if (result == null) result = caseSimlement(connector);
+				if (result == null) result = caseElement(connector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,7 +121,14 @@ public class TinyccSwitch<T> extends Switch<T> {
 			case TinyccPackage.ITEM: {
 				Item item = (Item)theEObject;
 				T result = caseItem(item);
-				if (result == null) result = caseEntity(item);
+				if (result == null) result = caseSimlement(item);
+				if (result == null) result = caseElement(item);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TinyccPackage.ELEMENT: {
+				Element element = (Element)theEObject;
+				T result = caseElement(element);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,17 +152,17 @@ public class TinyccSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Simlement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Simlement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntity(Entity object) {
+	public T caseSimlement(Simlement object) {
 		return null;
 	}
 
@@ -241,6 +253,21 @@ public class TinyccSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseItem(Item object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElement(Element object) {
 		return null;
 	}
 

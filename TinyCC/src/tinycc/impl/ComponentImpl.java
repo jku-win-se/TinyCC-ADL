@@ -34,7 +34,7 @@ import tinycc.TinyccPackage;
  *
  * @generated
  */
-public class ComponentImpl extends EntityImpl implements Component {
+public class ComponentImpl extends SimlementImpl implements Component {
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

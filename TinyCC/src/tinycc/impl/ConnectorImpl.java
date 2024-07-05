@@ -31,13 +31,13 @@ import tinycc.TinyccPackage;
  * </p>
  * <ul>
  *   <li>{@link tinycc.impl.ConnectorImpl#getEnds <em>Ends</em>}</li>
- *   <li>{@link tinycc.impl.ConnectorImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link tinycc.impl.ConnectorImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link tinycc.impl.ConnectorImpl#getOppositeConnector <em>Opposite Connector</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConnectorImpl extends EntityImpl implements Connector {
+public class ConnectorImpl extends SimlementImpl implements Connector {
 	/**
 	 * The cached value of the '{@link #getEnds() <em>Ends</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,14 +49,14 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 	protected EList<ConnectorEnd> ends;
 
 	/**
-	 * The cached value of the '{@link #getProperty() <em>Property</em>}' containment reference list.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProperty()
+	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> property;
+	protected EList<Property> properties;
 
 	/**
 	 * The cached value of the '{@link #getOppositeConnector() <em>Opposite Connector</em>}' reference.
@@ -106,11 +106,11 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getProperty() {
-		if (property == null) {
-			property = new EObjectContainmentEList<Property>(Property.class, this, TinyccPackage.CONNECTOR__PROPERTY);
+	public EList<Property> getProperties() {
+		if (properties == null) {
+			properties = new EObjectContainmentEList<Property>(Property.class, this, TinyccPackage.CONNECTOR__PROPERTIES);
 		}
-		return property;
+		return properties;
 	}
 
 	/**
@@ -163,8 +163,8 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 		switch (featureID) {
 			case TinyccPackage.CONNECTOR__ENDS:
 				return ((InternalEList<?>)getEnds()).basicRemove(otherEnd, msgs);
-			case TinyccPackage.CONNECTOR__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+			case TinyccPackage.CONNECTOR__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,8 +179,8 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 		switch (featureID) {
 			case TinyccPackage.CONNECTOR__ENDS:
 				return getEnds();
-			case TinyccPackage.CONNECTOR__PROPERTY:
-				return getProperty();
+			case TinyccPackage.CONNECTOR__PROPERTIES:
+				return getProperties();
 			case TinyccPackage.CONNECTOR__OPPOSITE_CONNECTOR:
 				if (resolve) return getOppositeConnector();
 				return basicGetOppositeConnector();
@@ -201,9 +201,9 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 				getEnds().clear();
 				getEnds().addAll((Collection<? extends ConnectorEnd>)newValue);
 				return;
-			case TinyccPackage.CONNECTOR__PROPERTY:
-				getProperty().clear();
-				getProperty().addAll((Collection<? extends Property>)newValue);
+			case TinyccPackage.CONNECTOR__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
 			case TinyccPackage.CONNECTOR__OPPOSITE_CONNECTOR:
 				setOppositeConnector((Connector)newValue);
@@ -223,8 +223,8 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 			case TinyccPackage.CONNECTOR__ENDS:
 				getEnds().clear();
 				return;
-			case TinyccPackage.CONNECTOR__PROPERTY:
-				getProperty().clear();
+			case TinyccPackage.CONNECTOR__PROPERTIES:
+				getProperties().clear();
 				return;
 			case TinyccPackage.CONNECTOR__OPPOSITE_CONNECTOR:
 				setOppositeConnector((Connector)null);
@@ -243,8 +243,8 @@ public class ConnectorImpl extends EntityImpl implements Connector {
 		switch (featureID) {
 			case TinyccPackage.CONNECTOR__ENDS:
 				return ends != null && !ends.isEmpty();
-			case TinyccPackage.CONNECTOR__PROPERTY:
-				return property != null && !property.isEmpty();
+			case TinyccPackage.CONNECTOR__PROPERTIES:
+				return properties != null && !properties.isEmpty();
 			case TinyccPackage.CONNECTOR__OPPOSITE_CONNECTOR:
 				return oppositeConnector != null;
 		}

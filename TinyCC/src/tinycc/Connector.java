@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link tinycc.Connector#getEnds <em>Ends</em>}</li>
- *   <li>{@link tinycc.Connector#getProperty <em>Property</em>}</li>
+ *   <li>{@link tinycc.Connector#getProperties <em>Properties</em>}</li>
  *   <li>{@link tinycc.Connector#getOppositeConnector <em>Opposite Connector</em>}</li>
  * </ul>
  *
@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Connector extends Entity {
+public interface Connector extends Simlement {
 	/**
 	 * Returns the value of the '<em><b>Ends</b></em>' containment reference list.
 	 * The list contents are of type {@link tinycc.ConnectorEnd}.
@@ -30,22 +30,22 @@ public interface Connector extends Entity {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ends</em>' containment reference list.
 	 * @see tinycc.TinyccPackage#getConnector_Ends()
-	 * @model containment="true"
+	 * @model containment="true" lower="2"
 	 * @generated
 	 */
 	EList<ConnectorEnd> getEnds();
 
 	/**
-	 * Returns the value of the '<em><b>Property</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
 	 * The list contents are of type {@link tinycc.Property}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Property</em>' containment reference list.
-	 * @see tinycc.TinyccPackage#getConnector_Property()
+	 * @return the value of the '<em>Properties</em>' containment reference list.
+	 * @see tinycc.TinyccPackage#getConnector_Properties()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Property> getProperty();
+	EList<Property> getProperties();
 
 	/**
 	 * Returns the value of the '<em><b>Opposite Connector</b></em>' reference.

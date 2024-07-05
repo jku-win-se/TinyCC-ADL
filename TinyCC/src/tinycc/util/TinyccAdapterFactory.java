@@ -72,8 +72,8 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
+			public Adapter caseSimlement(Simlement object) {
+				return createSimlementAdapter();
 			}
 			@Override
 			public Adapter caseProperty(Property object) {
@@ -98,6 +98,10 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseItem(Item object) {
 				return createItemAdapter();
+			}
+			@Override
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -134,16 +138,16 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tinycc.Entity <em>Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link tinycc.Simlement <em>Simlement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tinycc.Entity
+	 * @see tinycc.Simlement
 	 * @generated
 	 */
-	public Adapter createEntityAdapter() {
+	public Adapter createSimlementAdapter() {
 		return null;
 	}
 
@@ -228,6 +232,20 @@ public class TinyccAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tinycc.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tinycc.Element
+	 * @generated
+	 */
+	public Adapter createElementAdapter() {
 		return null;
 	}
 

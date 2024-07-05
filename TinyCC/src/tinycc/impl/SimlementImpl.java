@@ -7,51 +7,50 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import tinycc.Entity;
+import tinycc.Simlement;
 import tinycc.TinyccPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entity</b></em>'.
+ * An implementation of the model object '<em><b>Simlement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tinycc.impl.EntityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tinycc.impl.SimlementImpl#getSimModelPath <em>Sim Model Path</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
+public abstract class SimlementImpl extends ElementImpl implements Simlement {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getSimModelPath() <em>Sim Model Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getSimModelPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String SIM_MODEL_PATH_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getSimModelPath() <em>Sim Model Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getSimModelPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String simModelPath = SIM_MODEL_PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntityImpl() {
+	protected SimlementImpl() {
 		super();
 	}
 
@@ -62,7 +61,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TinyccPackage.Literals.ENTITY;
+		return TinyccPackage.Literals.SIMLEMENT;
 	}
 
 	/**
@@ -71,8 +70,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getSimModelPath() {
+		return simModelPath;
 	}
 
 	/**
@@ -81,11 +80,11 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setSimModelPath(String newSimModelPath) {
+		String oldSimModelPath = simModelPath;
+		simModelPath = newSimModelPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TinyccPackage.ENTITY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TinyccPackage.SIMLEMENT__SIM_MODEL_PATH, oldSimModelPath, simModelPath));
 	}
 
 	/**
@@ -96,8 +95,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TinyccPackage.ENTITY__NAME:
-				return getName();
+			case TinyccPackage.SIMLEMENT__SIM_MODEL_PATH:
+				return getSimModelPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +109,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TinyccPackage.ENTITY__NAME:
-				setName((String)newValue);
+			case TinyccPackage.SIMLEMENT__SIM_MODEL_PATH:
+				setSimModelPath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +124,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TinyccPackage.ENTITY__NAME:
-				setName(NAME_EDEFAULT);
+			case TinyccPackage.SIMLEMENT__SIM_MODEL_PATH:
+				setSimModelPath(SIM_MODEL_PATH_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +139,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TinyccPackage.ENTITY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TinyccPackage.SIMLEMENT__SIM_MODEL_PATH:
+				return SIM_MODEL_PATH_EDEFAULT == null ? simModelPath != null : !SIM_MODEL_PATH_EDEFAULT.equals(simModelPath);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,10 +155,10 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (simModelPath: ");
+		result.append(simModelPath);
 		result.append(')');
 		return result.toString();
 	}
 
-} //EntityImpl
+} //SimlementImpl

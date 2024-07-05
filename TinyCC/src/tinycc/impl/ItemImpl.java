@@ -34,7 +34,7 @@ import tinycc.TinyccPackage;
  *
  * @generated
  */
-public class ItemImpl extends EntityImpl implements Item {
+public class ItemImpl extends SimlementImpl implements Item {
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->

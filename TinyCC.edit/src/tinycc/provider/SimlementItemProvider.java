@@ -14,23 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import tinycc.Property;
+import tinycc.Simlement;
 import tinycc.TinyccPackage;
 
 /**
- * This is the item provider adapter for a {@link tinycc.Property} object.
+ * This is the item provider adapter for a {@link tinycc.Simlement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyItemProvider extends ElementItemProvider {
+public class SimlementItemProvider extends ElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyItemProvider(AdapterFactory adapterFactory) {
+	public SimlementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,65 +45,31 @@ public class PropertyItemProvider extends ElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuesPropertyDescriptor(object);
-			addTypesPropertyDescriptor(object);
+			addSimModelPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Values feature.
+	 * This adds a property descriptor for the Sim Model Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuesPropertyDescriptor(Object object) {
+	protected void addSimModelPathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_values_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__VALUES,
+				 getString("_UI_Simlement_simModelPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Simlement_simModelPath_feature", "_UI_Simlement_type"),
+				 TinyccPackage.Literals.SIMLEMENT__SIM_MODEL_PATH,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Types feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_types_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_types_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__TYPES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Property.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Property"));
 	}
 
 	/**
@@ -114,10 +80,10 @@ public class PropertyItemProvider extends ElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Property)object).getName();
+		String label = ((Simlement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Property_type") :
-			getString("_UI_Property_type") + " " + label;
+			getString("_UI_Simlement_type") :
+			getString("_UI_Simlement_type") + " " + label;
 	}
 
 
@@ -132,9 +98,8 @@ public class PropertyItemProvider extends ElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Property.class)) {
-			case TinyccPackage.PROPERTY__VALUES:
-			case TinyccPackage.PROPERTY__TYPES:
+		switch (notification.getFeatureID(Simlement.class)) {
+			case TinyccPackage.SIMLEMENT__SIM_MODEL_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -58,14 +58,14 @@ public interface TinyccPackage extends EPackage {
 	TinyccPackage eINSTANCE = tinycc.impl.TinyccPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link tinycc.impl.EntityImpl <em>Entity</em>}' class.
+	 * The meta object id for the '{@link tinycc.impl.ElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tinycc.impl.EntityImpl
-	 * @see tinycc.impl.TinyccPackageImpl#getEntity()
+	 * @see tinycc.impl.ElementImpl
+	 * @see tinycc.impl.TinyccPackageImpl#getElement()
 	 * @generated
 	 */
-	int ENTITY = 1;
+	int ELEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -74,25 +74,71 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__NAME = 0;
+	int ELEMENT__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Entity</em>' class.
+	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 1;
+	int ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Entity</em>' class.
+	 * The number of operations of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = 0;
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link tinycc.impl.SimlementImpl <em>Simlement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tinycc.impl.SimlementImpl
+	 * @see tinycc.impl.TinyccPackageImpl#getSimlement()
+	 * @generated
+	 */
+	int SIMLEMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMLEMENT__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMLEMENT__SIM_MODEL_PATH = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simlement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMLEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Simlement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMLEMENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.ComponentImpl <em>Component</em>}' class.
@@ -111,7 +157,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__NAME = ENTITY__NAME;
+	int COMPONENT__NAME = SIMLEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SIM_MODEL_PATH = SIMLEMENT__SIM_MODEL_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -120,7 +175,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PROPERTIES = ENTITY_FEATURE_COUNT + 0;
+	int COMPONENT__PROPERTIES = SIMLEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -129,7 +184,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PORTS = ENTITY_FEATURE_COUNT + 1;
+	int COMPONENT__PORTS = SIMLEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -138,7 +193,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENTS = ENTITY_FEATURE_COUNT + 2;
+	int COMPONENT__COMPONENTS = SIMLEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -147,7 +202,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
+	int COMPONENT_FEATURE_COUNT = SIMLEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -156,7 +211,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int COMPONENT_OPERATION_COUNT = SIMLEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.PropertyImpl <em>Property</em>}' class.
@@ -175,7 +230,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__NAME = ENTITY__NAME;
+	int PROPERTY__NAME = ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -184,7 +239,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__VALUES = ENTITY_FEATURE_COUNT + 0;
+	int PROPERTY__VALUES = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Types</b></em>' attribute list.
@@ -193,7 +248,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TYPES = ENTITY_FEATURE_COUNT + 1;
+	int PROPERTY__TYPES = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -202,7 +257,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int PROPERTY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -211,7 +266,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int PROPERTY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.PortImpl <em>Port</em>}' class.
@@ -230,7 +285,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__NAME = ENTITY__NAME;
+	int PORT__NAME = SIMLEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__SIM_MODEL_PATH = SIMLEMENT__SIM_MODEL_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -239,7 +303,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__DIRECTION = ENTITY_FEATURE_COUNT + 0;
+	int PORT__DIRECTION = SIMLEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -248,7 +312,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROPERTIES = ENTITY_FEATURE_COUNT + 1;
+	int PORT__PROPERTIES = SIMLEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -257,7 +321,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int PORT_FEATURE_COUNT = SIMLEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -266,7 +330,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int PORT_OPERATION_COUNT = SIMLEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.ConnectorEndImpl <em>Connector End</em>}' class.
@@ -285,7 +349,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_END__NAME = ENTITY__NAME;
+	int CONNECTOR_END__NAME = SIMLEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_END__SIM_MODEL_PATH = SIMLEMENT__SIM_MODEL_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -294,7 +367,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_END__PROPERTIES = ENTITY_FEATURE_COUNT + 0;
+	int CONNECTOR_END__PROPERTIES = SIMLEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -303,7 +376,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_END__PORT = ENTITY_FEATURE_COUNT + 1;
+	int CONNECTOR_END__PORT = SIMLEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Connector End</em>' class.
@@ -312,7 +385,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_END_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int CONNECTOR_END_FEATURE_COUNT = SIMLEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Connector End</em>' class.
@@ -321,7 +394,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_END_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int CONNECTOR_END_OPERATION_COUNT = SIMLEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -340,7 +413,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__NAME = ENTITY__NAME;
+	int CONNECTOR__NAME = SIMLEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SIM_MODEL_PATH = SIMLEMENT__SIM_MODEL_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Ends</b></em>' containment reference list.
@@ -349,16 +431,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__ENDS = ENTITY_FEATURE_COUNT + 0;
+	int CONNECTOR__ENDS = SIMLEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__PROPERTY = ENTITY_FEATURE_COUNT + 1;
+	int CONNECTOR__PROPERTIES = SIMLEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Opposite Connector</b></em>' reference.
@@ -367,7 +449,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__OPPOSITE_CONNECTOR = ENTITY_FEATURE_COUNT + 2;
+	int CONNECTOR__OPPOSITE_CONNECTOR = SIMLEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
@@ -376,7 +458,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
+	int CONNECTOR_FEATURE_COUNT = SIMLEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -385,7 +467,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int CONNECTOR_OPERATION_COUNT = SIMLEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.impl.ModelImpl <em>Model</em>}' class.
@@ -459,7 +541,16 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__NAME = ENTITY__NAME;
+	int ITEM__NAME = SIMLEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Sim Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM__SIM_MODEL_PATH = SIMLEMENT__SIM_MODEL_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -468,7 +559,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__CONNECTORS = ENTITY_FEATURE_COUNT + 0;
+	int ITEM__CONNECTORS = SIMLEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -477,7 +568,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__PROPERTIES = ENTITY_FEATURE_COUNT + 1;
+	int ITEM__PROPERTIES = SIMLEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -486,7 +577,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+	int ITEM_FEATURE_COUNT = SIMLEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Item</em>' class.
@@ -495,7 +586,7 @@ public interface TinyccPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int ITEM_OPERATION_COUNT = SIMLEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link tinycc.FlowDirection <em>Flow Direction</em>}' enum.
@@ -505,7 +596,7 @@ public interface TinyccPackage extends EPackage {
 	 * @see tinycc.impl.TinyccPackageImpl#getFlowDirection()
 	 * @generated
 	 */
-	int FLOW_DIRECTION = 8;
+	int FLOW_DIRECTION = 9;
 
 
 	/**
@@ -552,25 +643,25 @@ public interface TinyccPackage extends EPackage {
 	EReference getComponent_Components();
 
 	/**
-	 * Returns the meta object for class '{@link tinycc.Entity <em>Entity</em>}'.
+	 * Returns the meta object for class '{@link tinycc.Simlement <em>Simlement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity</em>'.
-	 * @see tinycc.Entity
+	 * @return the meta object for class '<em>Simlement</em>'.
+	 * @see tinycc.Simlement
 	 * @generated
 	 */
-	EClass getEntity();
+	EClass getSimlement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tinycc.Entity#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link tinycc.Simlement#getSimModelPath <em>Sim Model Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tinycc.Entity#getName()
-	 * @see #getEntity()
+	 * @return the meta object for the attribute '<em>Sim Model Path</em>'.
+	 * @see tinycc.Simlement#getSimModelPath()
+	 * @see #getSimlement()
 	 * @generated
 	 */
-	EAttribute getEntity_Name();
+	EAttribute getSimlement_SimModelPath();
 
 	/**
 	 * Returns the meta object for class '{@link tinycc.Property <em>Property</em>}'.
@@ -690,15 +781,15 @@ public interface TinyccPackage extends EPackage {
 	EReference getConnector_Ends();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link tinycc.Connector#getProperty <em>Property</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tinycc.Connector#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Property</em>'.
-	 * @see tinycc.Connector#getProperty()
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
+	 * @see tinycc.Connector#getProperties()
 	 * @see #getConnector()
 	 * @generated
 	 */
-	EReference getConnector_Property();
+	EReference getConnector_Properties();
 
 	/**
 	 * Returns the meta object for the reference '{@link tinycc.Connector#getOppositeConnector <em>Opposite Connector</em>}'.
@@ -787,6 +878,27 @@ public interface TinyccPackage extends EPackage {
 	EReference getItem_Properties();
 
 	/**
+	 * Returns the meta object for class '{@link tinycc.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see tinycc.Element
+	 * @generated
+	 */
+	EClass getElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link tinycc.Element#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tinycc.Element#getName()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EAttribute getElement_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link tinycc.FlowDirection <em>Flow Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -854,22 +966,22 @@ public interface TinyccPackage extends EPackage {
 		EReference COMPONENT__COMPONENTS = eINSTANCE.getComponent_Components();
 
 		/**
-		 * The meta object literal for the '{@link tinycc.impl.EntityImpl <em>Entity</em>}' class.
+		 * The meta object literal for the '{@link tinycc.impl.SimlementImpl <em>Simlement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tinycc.impl.EntityImpl
-		 * @see tinycc.impl.TinyccPackageImpl#getEntity()
+		 * @see tinycc.impl.SimlementImpl
+		 * @see tinycc.impl.TinyccPackageImpl#getSimlement()
 		 * @generated
 		 */
-		EClass ENTITY = eINSTANCE.getEntity();
+		EClass SIMLEMENT = eINSTANCE.getSimlement();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sim Model Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
+		EAttribute SIMLEMENT__SIM_MODEL_PATH = eINSTANCE.getSimlement_SimModelPath();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.impl.PropertyImpl <em>Property</em>}' class.
@@ -968,12 +1080,12 @@ public interface TinyccPackage extends EPackage {
 		EReference CONNECTOR__ENDS = eINSTANCE.getConnector_Ends();
 
 		/**
-		 * The meta object literal for the '<em><b>Property</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR__PROPERTY = eINSTANCE.getConnector_Property();
+		EReference CONNECTOR__PROPERTIES = eINSTANCE.getConnector_Properties();
 
 		/**
 		 * The meta object literal for the '<em><b>Opposite Connector</b></em>' reference feature.
@@ -1042,6 +1154,24 @@ public interface TinyccPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITEM__PROPERTIES = eINSTANCE.getItem_Properties();
+
+		/**
+		 * The meta object literal for the '{@link tinycc.impl.ElementImpl <em>Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tinycc.impl.ElementImpl
+		 * @see tinycc.impl.TinyccPackageImpl#getElement()
+		 * @generated
+		 */
+		EClass ELEMENT = eINSTANCE.getElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.FlowDirection <em>Flow Direction</em>}' enum.

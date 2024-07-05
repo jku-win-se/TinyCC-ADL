@@ -22,16 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import tinycc.Entity;
+import tinycc.Element;
 import tinycc.TinyccPackage;
 
 /**
- * This is the item provider adapter for a {@link tinycc.Entity} object.
+ * This is the item provider adapter for a {@link tinycc.Element} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider 
+public class ElementItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class EntityItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityItemProvider(AdapterFactory adapterFactory) {
+	public ElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,9 +76,9 @@ public class EntityItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entity_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_name_feature", "_UI_Entity_type"),
-				 TinyccPackage.Literals.ENTITY__NAME,
+				 getString("_UI_Element_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Element_name_feature", "_UI_Element_type"),
+				 TinyccPackage.Literals.ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -95,10 +95,10 @@ public class EntityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Entity)object).getName();
+		String label = ((Element)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Entity_type") :
-			getString("_UI_Entity_type") + " " + label;
+			getString("_UI_Element_type") :
+			getString("_UI_Element_type") + " " + label;
 	}
 
 
@@ -113,8 +113,8 @@ public class EntityItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Entity.class)) {
-			case TinyccPackage.ENTITY__NAME:
+		switch (notification.getFeatureID(Element.class)) {
+			case TinyccPackage.ELEMENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

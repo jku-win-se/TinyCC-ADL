@@ -26,7 +26,7 @@ import tinycc.TinyccPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortItemProvider extends EntityItemProvider {
+public class PortItemProvider extends SimlementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
