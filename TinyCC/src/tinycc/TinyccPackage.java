@@ -233,22 +233,22 @@ public interface TinyccPackage extends EPackage {
 	int PROPERTY__NAME = ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Values</b></em>' attribute list.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__VALUES = ELEMENT_FEATURE_COUNT + 0;
+	int PROPERTY__VALUE = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' attribute list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TYPES = ELEMENT_FEATURE_COUNT + 1;
+	int PROPERTY__TYPE = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -674,26 +674,26 @@ public interface TinyccPackage extends EPackage {
 	EClass getProperty();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link tinycc.Property#getValues <em>Values</em>}'.
+	 * Returns the meta object for the attribute '{@link tinycc.Property#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Values</em>'.
-	 * @see tinycc.Property#getValues()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see tinycc.Property#getValue()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getProperty_Values();
+	EAttribute getProperty_Value();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link tinycc.Property#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the attribute '{@link tinycc.Property#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Types</em>'.
-	 * @see tinycc.Property#getTypes()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see tinycc.Property#getType()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getProperty_Types();
+	EAttribute getProperty_Type();
 
 	/**
 	 * Returns the meta object for class '{@link tinycc.Port <em>Port</em>}'.
@@ -994,20 +994,20 @@ public interface TinyccPackage extends EPackage {
 		EClass PROPERTY = eINSTANCE.getProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY__VALUES = eINSTANCE.getProperty_Values();
+		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY__TYPES = eINSTANCE.getProperty_Types();
+		EAttribute PROPERTY__TYPE = eINSTANCE.getProperty_Type();
 
 		/**
 		 * The meta object literal for the '{@link tinycc.impl.PortImpl <em>Port</em>}' class.

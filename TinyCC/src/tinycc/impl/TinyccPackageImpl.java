@@ -236,7 +236,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Values() {
+	public EAttribute getProperty_Value() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -246,7 +246,7 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProperty_Types() {
+	public EAttribute getProperty_Type() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -488,8 +488,8 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		createEAttribute(simlementEClass, SIMLEMENT__SIM_MODEL_PATH);
 
 		propertyEClass = createEClass(PROPERTY);
-		createEAttribute(propertyEClass, PROPERTY__VALUES);
-		createEAttribute(propertyEClass, PROPERTY__TYPES);
+		createEAttribute(propertyEClass, PROPERTY__VALUE);
+		createEAttribute(propertyEClass, PROPERTY__TYPE);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__DIRECTION);
@@ -566,8 +566,8 @@ public class TinyccPackageImpl extends EPackageImpl implements TinyccPackage {
 		initEAttribute(getSimlement_SimModelPath(), ecorePackage.getEString(), "simModelPath", null, 0, 1, Simlement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperty_Values(), ecorePackage.getEString(), "values", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperty_Types(), ecorePackage.getEString(), "types", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_Type(), ecorePackage.getEString(), "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Direction(), this.getFlowDirection(), "direction", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

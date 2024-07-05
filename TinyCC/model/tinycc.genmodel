@@ -20,8 +20,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Simlement/simModelPath"/>
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/values"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/types"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Property/type"/>
     </genClasses>
     <genClasses ecoreClass="tinycc.ecore#//Port">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinycc.ecore#//Port/direction"/>

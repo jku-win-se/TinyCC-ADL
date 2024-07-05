@@ -45,26 +45,26 @@ public class PropertyItemProvider extends ElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuesPropertyDescriptor(object);
-			addTypesPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Values feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuesPropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_values_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__VALUES,
+				 getString("_UI_Property_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_value_feature", "_UI_Property_type"),
+				 TinyccPackage.Literals.PROPERTY__VALUE,
 				 true,
 				 false,
 				 false,
@@ -74,19 +74,19 @@ public class PropertyItemProvider extends ElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Types feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypesPropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Property_types_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_types_feature", "_UI_Property_type"),
-				 TinyccPackage.Literals.PROPERTY__TYPES,
+				 getString("_UI_Property_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_type_feature", "_UI_Property_type"),
+				 TinyccPackage.Literals.PROPERTY__TYPE,
 				 true,
 				 false,
 				 false,
@@ -133,8 +133,8 @@ public class PropertyItemProvider extends ElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Property.class)) {
-			case TinyccPackage.PROPERTY__VALUES:
-			case TinyccPackage.PROPERTY__TYPES:
+			case TinyccPackage.PROPERTY__VALUE:
+			case TinyccPackage.PROPERTY__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

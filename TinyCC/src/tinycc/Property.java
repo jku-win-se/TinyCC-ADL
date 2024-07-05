@@ -2,7 +2,6 @@
  */
 package tinycc;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,8 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tinycc.Property#getValues <em>Values</em>}</li>
- *   <li>{@link tinycc.Property#getTypes <em>Types</em>}</li>
+ *   <li>{@link tinycc.Property#getValue <em>Value</em>}</li>
+ *   <li>{@link tinycc.Property#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see tinycc.TinyccPackage#getProperty()
@@ -23,27 +22,47 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Property extends Element {
 	/**
-	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' attribute list.
-	 * @see tinycc.TinyccPackage#getProperty_Values()
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see tinycc.TinyccPackage#getProperty_Value()
 	 * @model
 	 * @generated
 	 */
-	EList<String> getValues();
+	String getValue();
 
 	/**
-	 * Returns the value of the '<em><b>Types</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Sets the value of the '{@link tinycc.Property#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' attribute list.
-	 * @see tinycc.TinyccPackage#getProperty_Types()
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see tinycc.TinyccPackage#getProperty_Type()
 	 * @model
 	 * @generated
 	 */
-	EList<String> getTypes();
+	String getType();
+
+	/**
+	 * Sets the value of the '{@link tinycc.Property#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(String value);
 
 } // Property
